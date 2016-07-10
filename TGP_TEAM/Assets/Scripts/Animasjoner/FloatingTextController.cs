@@ -8,7 +8,7 @@ public class FloatingTextController : MonoBehaviour {
 
     public static void Initialize()
     {
-        canvas = GameObject.FindGameObjectWithTag("Damage");
+        canvas = GameObject.FindGameObjectWithTag("Canvas");
         if(!popupText)
             popupText = Resources.Load<FloatingText>("Prefabs/PopupTextParent"); //Leter da gjennom Ressursmappa så Prefabs for å så finne texten
     }
@@ -19,7 +19,7 @@ public class FloatingTextController : MonoBehaviour {
         Vector2 screenPosition = Camera.main.WorldToScreenPoint(location.position);
 
         instance.transform.SetParent(canvas.transform, false);
-        //instance.transform.position = screenPosition;
+        instance.transform.position = screenPosition;
         //instance.transform.localPosition = new Vector2(0,0);
         instance.SetText(text);
     }

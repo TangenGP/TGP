@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a1aad1a89b4d8ed42825d8a5741ef190
-timeCreated: 1467804024
+timeCreated: 1467984777
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,6 +9,8 @@ TextureImporter:
     21300004: Stone_02
     21300006: Stone_01
     21300008: Laser_02
+    21300010: ship_01
+    21300012: ship_02
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -134,6 +136,48 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+    - name: ship_01
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 337
+        width: 104
+        height: 82
+      alignment: 9
+      pivot: {x: 0.5025359, y: 0.6672382}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23.736267, y: 27.286469}
+        - {x: -21.263733, y: 27.286469}
+        - {x: -52.263733, y: 12.2864685}
+        - {x: -52.263733, y: -11.7135315}
+        - {x: -45.263733, y: -24.713531}
+        - {x: -28.263733, y: -54.71353}
+        - {x: 27.736267, y: -54.71353}
+        - {x: 51.736267, y: -14.7135315}
+        - {x: 51.736267, y: 4.2864685}
+    - name: ship_02
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 83
+        width: 111
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55.5, y: 1.5}
+        - {x: 23.5, y: 36.5}
+        - {x: -16.5, y: 36.5}
+        - {x: -55.5, y: 18.5}
+        - {x: -55.5, y: -30.5}
+        - {x: -45.5, y: -36.5}
+        - {x: 38.5, y: -36.5}
+        - {x: 40.5, y: -35.5}
+        - {x: 45.5, y: -28.5}
+        - {x: 52.5, y: -17.5}
+        - {x: 55.5, y: -11.5}
     outline: []
   spritePackingTag: 
   userData: 
