@@ -8,14 +8,16 @@ public class Health : MonoBehaviour {
     public float max_health = 100f;
     public float cur_health = 0f;
     public bool alive = true;
+	public GameObject cam;
+	public int amountMoney;
 
 	// Use this for initialization
 	void Start ()
     {
-        //FloatingTextController.Initialize();
+		//amountMoney = cam.GetComponent<playerMoney> ().addMoney (amountMoney);
         alive = true;
         cur_health = max_health;
-        SetHealthBar();    
+        SetHealthBar();
 	}
 
     void DoDamage()
@@ -42,9 +44,11 @@ public class Health : MonoBehaviour {
         if (!alive)
         {
             Destroy(gameObject);
+			//amountMoney;
+			cam.GetComponent<playerMoney>().addMoney(50);
         }
-
     }
+
     void SetHealthBar ()
     {
         float my_health = cur_health / max_health;

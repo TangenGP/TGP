@@ -7,13 +7,13 @@ public class playerMoney : MonoBehaviour {
 	public int money;
 	public Text moneyText;
 
-	void Start () 
+	void Start ()
 	{
 		money = 100;
 		moneyText.text = money.ToString ();
 	}
 
-	void Update () 
+	void Update ()
 	{
 	
 	}
