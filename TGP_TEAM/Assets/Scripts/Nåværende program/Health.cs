@@ -8,8 +8,8 @@ public class Health : MonoBehaviour {
     public float max_health = 100f;
     public float cur_health = 0f;
     public bool alive = true;
-	public GameObject cam;
-	public int amountMoney;
+	public GameObject gamePlayer;
+	public int amountAdded;
 
 	// Use this for initialization
 	void Start ()
@@ -45,7 +45,7 @@ public class Health : MonoBehaviour {
         {
             Destroy(gameObject);
 			//amountMoney;
-			cam.GetComponent<playerMoney>().addMoney(50);
+			gamePlayer.GetComponent<playerMoney>().addMoney(amountAdded);
         }
     }
 

@@ -13,6 +13,18 @@ public class Weapon : MonoBehaviour
     float timeToFire = 0;
     Transform firePoint;
 
+	public int laserAmmo;
+	public int laserSkuddKjop = 1000;
+	public int laserShot;
+	public GameObject gunDeactivation;
+
+	void Start ()
+	{
+		laserAmmo = 100;
+		laserShot = 1;
+		gunDeactivation.gameObject.SetActive (true);
+	}
+
     //use this for initialization
     void Awake ()
     {
@@ -30,6 +42,13 @@ public class Weapon : MonoBehaviour
             if (Input.GetButton("Fire1"))
             {
                 Shoot();
+				if (laserAmmo <= 0) {
+					gunDeactivation.gameObject.SetActive (false);
+				} 
+				else 
+				{
+					laserAmmo -= laserShot;
+				}
             }
         }
         else
@@ -59,4 +78,9 @@ public class Weapon : MonoBehaviour
         Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
         BulletTrailPrefab.name = "pew";
     }
+
+	/*public void laserSkudd()
+	{
+		laserAmmo += laserSkuddKjop;
+	}*/
 }

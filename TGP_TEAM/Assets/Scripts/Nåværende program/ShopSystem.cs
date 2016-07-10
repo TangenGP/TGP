@@ -3,16 +3,15 @@ using System.Collections;
 
 public class ShopSystem : MonoBehaviour
 {
-	public int Gold = 100;
-    public int Stone = 0;
-    public int Wood = 0;
 
 	public GameObject ShopWall;
 	public GameObject gun;
 	public GameObject petgun;
 
+	public int amountSubtracted;
+	public int prisForAmmo;
+
 	void Start () {
-		Gold = 100;
 		ShopWall.gameObject.SetActive(false);
 		gun.gameObject.SetActive(true);
 		petgun.gameObject.SetActive(true);
@@ -35,20 +34,14 @@ public class ShopSystem : MonoBehaviour
 		petgun.gameObject.SetActive(true);
 	}
 
-	public void wood()
+	/*public void laserskuddx1()
 	{
-		if (Gold >= 10)
-		{
-			Gold -= 10;
-			Wood += 5;
-		}
+		GetComponent<Weapon> ().laserSkudd (prisForAmmo);
+		GetComponent<playerMoney>().subtractMoney(amountSubtracted);
 	}
 
-	public void stone()
+	public void laserskuddx2()
 	{
-		if (Gold >= 15) {
-			Gold -= 15;
-			Stone += 5;
-		}
-	}
+		
+	}*/
 }
