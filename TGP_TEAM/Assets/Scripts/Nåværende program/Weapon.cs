@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
@@ -13,16 +14,25 @@ public class Weapon : MonoBehaviour
     float timeToFire = 0;
     Transform firePoint;
 
-	public int laserAmmo;
-	public int laserSkuddKjop = 1000;
-	public int laserShot;
-	public GameObject gunDeactivation;
+    [SerializeField]
+	private int laserAmmo;
+    [SerializeField]
+    private int laserSkuddKjop = 500;
+    [SerializeField]
+    private int laserShot;
+
+    public GameObject gunDeactivation;
+	public Text ammunitionTextX1;
+	//public Text ammunitionTextX2;
+	//public Text ammunitionTextX3;
 
 	void Start ()
 	{
-		laserAmmo = 100;
-		laserShot = 1;
+		laserAmmo = 500;
 		gunDeactivation.gameObject.SetActive (true);
+		ammunitionTextX1.text = laserAmmo.ToString();
+		//ammunitionTextX2.text = laserAmmo.ToString();
+		//ammunitionTextX3.text = laserAmmo.ToString();
 	}
 
     //use this for initialization
@@ -41,15 +51,8 @@ public class Weapon : MonoBehaviour
         {
             if (Input.GetButton("Fire1"))
             {
-                Shoot();
-				if (laserAmmo <= 0) {
-					gunDeactivation.gameObject.SetActive (false);
-				} 
-				else 
-				{
-					laserAmmo -= laserShot;
-				}
-            }
+				Shoot();
+			}
         }
         else
         {
@@ -57,8 +60,9 @@ public class Weapon : MonoBehaviour
             {
                 timeToFire = Time.time + 1 / fireRate;
                 Shoot();
-            }
-        }
+
+			}
+		}
     }
          
     void Shoot()
@@ -71,16 +75,30 @@ public class Weapon : MonoBehaviour
             Effect();
             timeToSpawnEffect = Time.time + 1 / effectSpawnRate;
         }
-    }
+		if (laserAmmo <= 0)
+		{
+			gunDeactivation.gameObject.SetActive(false);
+		}
+		else
+		{
+			laserAmmo -= laserShot;
+			ammunitionTextX1.text = laserAmmo.ToString();
+			//ammunitionTextX2.text = laserAmmo.ToString();
+			//ammunitionTextX3.text = laserAmmo.ToString();
+		}
+	}
 
     void Effect()
     {
         Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
-        BulletTrailPrefab.name = "pew";
+        //BulletTrailPrefab.name = "pew";
     }
 
-	/*public void laserSkudd()
+	public void addAmmunition(int ammunitionGained)
 	{
-		laserAmmo += laserSkuddKjop;
-	}*/
+			laserAmmo += ammunitionGained;
+			ammunitionTextX1.text = laserAmmo.ToString();
+			//ammunitionTextX2.text = laserAmmo.ToString();
+			//ammunitionTextX3.text = laserAmmo.ToString();
+	}
 }

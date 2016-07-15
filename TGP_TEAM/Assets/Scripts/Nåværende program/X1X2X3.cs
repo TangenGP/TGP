@@ -3,9 +3,12 @@ using System.Collections;
 
 public class X1X2X3 : MonoBehaviour {
 
-	public GameObject X1;
-	public GameObject X2;
-	public GameObject X3;
+    [SerializeField]
+	private GameObject X1;
+    [SerializeField]
+    private GameObject X2;
+    [SerializeField]
+    private GameObject X3;
 
 	// Use this for initialization
 	void Start () {

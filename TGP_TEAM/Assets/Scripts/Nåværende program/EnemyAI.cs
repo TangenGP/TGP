@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 
 public class EnemyAI : MonoBehaviour {
@@ -41,4 +41,4 @@ public class EnemyAI : MonoBehaviour {
             transform.position = Vector3.MoveTowards(transform.position, startPos, moveSpeed * Time.deltaTime);
         }
 	}
-}
+}*/

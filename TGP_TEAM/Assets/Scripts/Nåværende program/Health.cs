@@ -9,12 +9,12 @@ public class Health : MonoBehaviour {
     public float cur_health = 0f;
     public bool alive = true;
 	public GameObject gamePlayer;
-	public int amountAdded;
+    [SerializeField]
+    private int amountAdded;
 
 	// Use this for initialization
 	void Start ()
     {
-		//amountMoney = cam.GetComponent<playerMoney> ().addMoney (amountMoney);
         alive = true;
         cur_health = max_health;
         SetHealthBar();

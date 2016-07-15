@@ -4,13 +4,14 @@ using System.Collections;
 public class DamageLaser : MonoBehaviour
 {
     public bool active = true;
-    public float damage = 10f;
+    public float damage;
     // Update is called once per frame
 
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        damage = Mathf.Round(Random.Range(damage, damage + 5f));
+		damage = Mathf.Round(damage);
+		//damage = Mathf.Round(Random.Range(damage, + 5f));
         other.gameObject.GetComponent<Health>().TakeDamage(damage);
 
         active = false;
@@ -21,4 +22,8 @@ public class DamageLaser : MonoBehaviour
             FloatingTextController.CreateFloatingText(damage.ToString(), transform);
         }
     }
+	public void increaseDamage(float increasedDamage)
+	{
+		damage += increasedDamage;
+	}
 }
